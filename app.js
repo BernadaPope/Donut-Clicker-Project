@@ -13,6 +13,17 @@ const autoClickerCount = document.getElementById("autoClickerCount");
 const purchaseButton = document.getElementById("purchaseButton");
 
 let ClickerCount = 0;
+let donutsCount = 15;
+
+function updateButtonState() {
+  if (donutsCount >= 15) {
+    purchaseButton.disabled = false;
+    purchaseButton.style.backkgroundColor = "";
+  } else {
+    purchaseButton.disabled = true;
+    purchaseButton.style.backgroundColor = "gray";
+  }
+}
 
 purchaseButton.addEventListener("click", function () {
   ClickerCount++;
