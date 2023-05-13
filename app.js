@@ -8,10 +8,11 @@ button.addEventListener("click", function () {
 
   clickCount.textContent = "Click count:" + counter;
 });
-const autoClickerSection = document.getElementById("autoClickerSection");
-const autoClickerCount = document.getElementById("autoClickerCount");
-const purchaseButton = document.getElementById("purchaseButton");
-const autoClickerCost = document.getElementById("autoClickerCost");
+const autoClickerSection = document.getElementById('autoClickerSection');
+const autoClickerCount = document.getElementById('autoClickerCount');
+const purchaseButton = document.getElementById('purchaseButton');
+const autoClickerCost = document.getElementById('autoClickerCost');
+const resetButton = document.getElementById('resetButton');
 
 let ClickerCount = 0;
 let donutsCount = 15;
@@ -44,6 +45,15 @@ function updateAutoClickerCost() {
     autoClickerCost.textContent = clickerCost;
 }
 
+function resetGame() {
+    clickerCount = 0;
+    donutsCount = 15;
+    clickerCost = 5;
+    updateAutoClickerCount();
+    updateButtonState();
+    updateAutoClickerCost();
+}
+
 purchaseButton.addEventListener("click", function () {
   if (donutsCount >= clickerCost) {
     donutsCount -= clickerCost;
@@ -51,6 +61,10 @@ purchaseButton.addEventListener("click", function () {
         updateAutoClickerCount();
         updateButtonState();
   }
+});
+
+resetButton.addEventListener('click', function () {
+    resetGame();
 });
 
 updateButtonState();
