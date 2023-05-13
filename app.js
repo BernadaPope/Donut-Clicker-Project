@@ -18,7 +18,7 @@ let donutsCount = 15;
 function updateButtonState() {
   if (donutsCount >= 15) {
     purchaseButton.disabled = false;
-    purchaseButton.style.backkgroundColor = "";
+    purchaseButton.style.backgroundColor = "";
   } else {
     purchaseButton.disabled = true;
     purchaseButton.style.backgroundColor = "gray";
