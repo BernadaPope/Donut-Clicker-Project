@@ -15,10 +15,10 @@ const autoClickerCost = document.getElementById("autoClickerCost");
 
 let ClickerCount = 0;
 let donutsCount = 15;
-let clickerCost = 20;
+let clickerCost = 5;
 
 function updateButtonState() {
-  if (donutsCount >= 15) {
+  if (donutsCount >= clickerCost) {
     purchaseButton.disabled = false;
     purchaseButton.style.backgroundColor = '';
   } else {
@@ -45,8 +45,8 @@ function updateAutoClickerCost() {
 }
 
 purchaseButton.addEventListener("click", function () {
-  if (donutsCount >= 15) {
-    donutsCount -= 10;
+  if (donutsCount >= clickerCost) {
+    donutsCount -= clickerCost;
     ClickerCount++;
         updateAutoClickerCount();
         updateButtonState();
