@@ -23,7 +23,7 @@ function updateButtonState() {
     purchaseButton.disabled = false;
     purchaseButton.style.backgroundColor = "";
   } else {
-    purchaseButton.disabled = false;
+    purchaseButton.disabled = true;
     purchaseButton.style.backgroundColor = "gray";
   }
 }
@@ -33,7 +33,7 @@ function updateButtonState() {
     purchaseButton.disabled = false;
     purchaseButton.style.backgroundColor = "";
   } else {
-    purchaseButton.disabled = false;
+    purchaseButton.disabled = true;
     purchaseButton.style.backgroundColor = "gray";
   }
 }
@@ -69,4 +69,4 @@ resetButton.addEventListener("click", function () {
 
 updateButtonState();
 updateAutoClickerCount();
-// updateAutoClickerCost();
+updateAutoClickerCost();
