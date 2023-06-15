@@ -3,6 +3,11 @@ const autoClickerCountElement = document.getElementById('clickerCount');
 const addDonutButton = document.getElementById('addDonutButton');
 const purchaseAutoClickerButton = document.getElementById('purchaseAutoClickerButton');
 const activateAutoClickersButton = document.getElementById('activateAutoClicker');
+const companyLink = document.getElementById('companyLink');
+const companyInfo = document.getElementById('companyInfo');
+const modal = document.getElementById("developer-modal");
+const link =document.getElementById("header a");
+const closeBtn = document.querySelector(".close");
 
 
 let counter = 0;
@@ -41,6 +46,19 @@ function activateAutoClickers() {
   updateDonutCount();
 }
 
+link.addEventListener("click", function() {
+  modal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+companyLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  companyInfo.classList.toggle('hidden');
+});
+
 addDonutButton.addEventListener("click", function () {
   addDonut();
 });
@@ -49,7 +67,7 @@ addPurchaseAutoClickerButton.addEventListener("click", function () {
   purchaseAutoClicker();
 });
 
-document.addEventListener('click' function() {
+document.addEventListener("click", function() {
   increaseClickCount();
 
 });
