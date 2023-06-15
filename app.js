@@ -49,7 +49,7 @@ function resetGame() {
   ClickerCount = 0;
   donutsCount = 15;
   clickerCost = 5;
-  updateAutoClickerCount();
+  updateAutoClickerCost();
   updateButtonState();
   updateAutoClickerCost();
 }
@@ -58,7 +58,7 @@ purchaseButton.addEventListener("click", function () {
   if (donutsCount >= clickerCost) {
     donutsCount -= clickerCost;
     ClickerCount++;
-    updateAutoClickerCount();
+    updateAutoClickerCost();
     updateButtonState();
   }
 });
@@ -68,5 +68,5 @@ resetButton.addEventListener("click", function () {
 });
 
 updateButtonState();
-updateAutoClickerCount();
+updateAutoClickerCost();
 updateAutoClickerCost();
