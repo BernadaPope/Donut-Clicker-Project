@@ -1,72 +1,20 @@
-const button = document.getElementById("clickButton");
-const clickCount = document.getElementById("clickCount");
+const button = document.getElementById("donut count");
+const clickCount = document.getElementById("addDonutButton");
 
 let counter = 0;
 
-button.addEventListener("click", function () {
-  counter++;
+function updateDonutCount() {
+  donutCountElement.textContent = donutCount;
 
-  clickCount.textContent = "Click count:" + counter;
-});
-const autoClickerSection = document.getElementById("autoClickerSection");
-const autoClickerCount = document.getElementById("autoClickerCount");
-const purchaseButton = document.getElementById("purchaseButton");
-const autoClickerCost = document.getElementById("autoClickerCost");
-const resetButton = document.getElementById("resetButton");
-
-let ClickerCount = 0;
-let donutsCount = 15;
-let clickerCost = 5;
-
-function updateButtonState() {
-  if (donutsCount >= clickerCost) {
-    purchaseButton.disabled = false;
-    purchaseButton.style.backgroundColor = "";
-  } else {
-    purchaseButton.disabled = true;
-    purchaseButton.style.backgroundColor = "gray";
-  }
 }
 
-function updateButtonState() {
-  if (donutsCount >= clickerCost) {
-    purchaseButton.disabled = false;
-    purchaseButton.style.backgroundColor = "";
-  } else {
-    purchaseButton.disabled = true;
-    purchaseButton.style.backgroundColor = "gray";
-  }
+function addDonut() {
+  donutCount++
+  updateDonutCount();
 }
 
-// function updateAutoClickerCount()
-autoClickerCount.textContent = ClickerCount;
-
-function updateAutoClickerCost() {
-  autoClickerCost.textContent = clickerCost;
-}
-
-function resetGame() {
-  ClickerCount = 0;
-  donutsCount = 15;
-  clickerCost = 5;
-  updateAutoClickerCost();
-  updateButtonState();
-  updateAutoClickerCost();
-}
-
-purchaseButton.addEventListener("click", function () {
-  if (donutsCount >= clickerCost) {
-    donutsCount -= clickerCost;
-    ClickerCount++;
-    updateAutoClickerCost();
-    updateButtonState();
-  }
+addDonutButton.addEventListener('click', function() {
+  addDonut();
 });
 
-resetButton.addEventListener("click", function () {
-  resetGame();
-});
-
-updateButtonState();
-updateAutoClickerCost();
-updateAutoClickerCost();
+updateDonutCount();
