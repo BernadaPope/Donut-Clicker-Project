@@ -14,44 +14,24 @@ header {
   background-color: lightpink;
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+#dropdown {
+  display: none;
+}
+#companyLink:hover + #dropdown {
+  display: block;
 }
 
-nav li {
-  display: inline-block;
-  margin-left: 70px;
-  padding-top: 25px;
-  
-  position: relative;
+.hidden {
+  display: none;
 }
 
-nav a {
-    color: blueviolet;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-nav a:hover {
-    color:black
-}
-
-nav a:before {
-    content: "";
-    display: block;
-    height: 5px;
-    width:100%;
-    background-color: orange;
-
-    position:absolute;
-    top:0;
-    width: 0%;
-    
-    transition: all ease-in-out 250ms;
-}
-
-nav a:hover::before {
-width: 100%;
+#companyInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50% );
+background-color: f9f9f9;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 2 px 4px rgba(0, 0, 0,.1 0);
 }
