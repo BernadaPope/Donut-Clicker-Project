@@ -1,77 +1,54 @@
-const donutCountElement = document.getElementById('donut count');
-const autoClickerCountElement = document.getElementById('clickerCount');
-const addDonutButton = document.getElementById('addDonutButton');
-const purchaseAutoClickerButton = document.getElementById('purchaseAutoClickerButton');
-const activateAutoClickersButton = document.getElementById('activateAutoClicker');
-const companyLink = document.getElementById('companyLink');
-const companyInfo = document.getElementById('companyInfo');
-const modal = document.getElementById("developer-modal");
-const link =document.getElementById("header a");
-const closeBtn = document.querySelector(".close");
+class donutMaker {
+  constructor() {
+    this.donuts = 0;
+    this.autoClickers = 0;
+    this.autoClickerCost = 100;
+  }
 
+  addDonut() {
+    this.donuts++;
+  }
+  purchaseAutoClicker() {
+    if (this.donuts >= this.autoClickerCost) {
+      this.donuts -= this.autoClickerCost;
+      this.autoClickers++;
+      this.autoClickerCost *= 1.1;
+    }
+  }
+  activateAutoClickers() {
+    for (let i = 0; i < this.autoClickers; i++) {
+      this.addDonut();
+    }
+  }
+    reset() {
+      this.donuts = 0;
+      this.autoClickers = 0;
+      this.autoClickerCost = 100;
+    }
+  }
+  
+  class App {
+    constructor() {
+      this.donutMaker = new donutMaker();
+    }
 
-let counter = 0;
-let AutoClickerCount = 0;
-let addClickerCost = 100;
-let clickCount = 0;
+start() {
+  document.getElementById("Click").addEventListener("click", this.onButtonClick.bind(this));
+  document.getElementById("buy-autoclicker").addEventListener("click", this.onBuyAutoClickerClick.bind(this));
+  document.getElementById("reset").add.addEventListener("click", this.onResetClick.bind(this));
 
-function updateDonutCount() {
-  donutCountElement.textContent = donutCount;
 }
-
-function addDonut() {
-  donutCount++;
-  updateDonutCount();
+onButtonClick() {
+  this.donutmaker.addDonut();
+  document.getElementById("donuts").innerHTML = this.donutMaker.donuts;
 }
-
-function increaseClickCount() {
-  clickCount++;
-  updateClickCount();
+onBuyAutoClickerClick() {
+  this.donutmaker.purchaseAutoClicker();
+  document.getElementById("autoclclickers").innerHTML = this.donutMaker.autoClickers;
 }
-
-function purchaseAutoClicker() {
-  if (clickCount >= addClickerCost && donutCount >= autoClickerCost) {
-    clickCount -= autoClickerCost;
-    donutCount -= autoClickerCost;
-    autoClickerCount++;
-    autoClickerCost += Math.round(autoClickerCost * 0.1);
-    updateDonutCount();
-    updateAutoClickerCount();
+  
+onResetClick() {
+  this.donutMaker.reset();
+  document.getElementById("autoclickers").innerHTML = this.donutMaker.autoClickers;
   }
 }
-
-function activateAutoClickers() {
-  const donutsToAdd = autoClickerCount;
-  donutCount += donutsToAdd;
-  updateDonutCount();
-}
-
-link.addEventListener("click", function() {
-  modal.style.display = "block";
-});
-
-closeBtn.addEventListener("click", function () {
-  modal.style.display = "none";
-});
-
-companyLink.addEventListener('click', function(e) {
-  e.preventDefault();
-  companyInfo.classList.toggle('hidden');
-});
-
-addDonutButton.addEventListener("click", function () {
-  addDonut();
-});
-
-addPurchaseAutoClickerButton.addEventListener("click", function () {
-  purchaseAutoClicker();
-});
-
-document.addEventListener("click", function() {
-  increaseClickCount();
-
-});
-
-updateDonutCount();
-updateAutoClickerCount();
-updateClickCount();
