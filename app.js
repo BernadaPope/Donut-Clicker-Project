@@ -16,8 +16,8 @@ class donutMaker {
     }
   }
   activateAutoClickers() {
-    for (let i = 0; i < this.autoClickers; i++) {
-      this.addDonut();
+    for(let i = 0; i < this.autoClickers; i++) {
+      this.donuts();
     }
   }
   reset() {
@@ -29,7 +29,7 @@ class donutMaker {
 
 class App {
   constructor() {
-    this.donutMaker = new donutMaker();
+    this.donutMaker = new DonutMaker();
   }
 
   start() {
@@ -40,21 +40,21 @@ class App {
   }
   onButtonClick() {
     this.donutMaker.addDonut();
-    document.getElementById("donuts").innerHTML=this.donutMaker.donuts;
+    document.getElementById("donuts").textContent=this.donutMaker.donuts;
   }
   
   onBuyAutoClickerClick() {
     if (this.donuts >= this.autoClickerCost) {
       this.donuts -= this.autoClickerCost;
       this.autoClickers++;
-      this.autoClickerCost*=1.1;
+      this.autoClickerCost *= 1.1;
+      this.donutMaker.activateAutoClickers();
     }
-    document.getElementById("autoClickers").innerHTML = this.donutMaker.autoClickers;
   }
 
   onResetClick() {
     this.donutMaker.reset();
-    document.getElementById("autoClickers").innerHTML=this.donutMaker.autoClickers;
+    document.getElementById("autoClickers").textContent=this.donutMaker.autoClickers;
   }
 }
 const app = new App();
