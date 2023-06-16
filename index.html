@@ -5,41 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donut Maker</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <header>
       <h1>Fred Da Baker's Baking Company</h1>
-
-     <h2 id="page-title">Inspiration Behind this game</h2>
-
-     <a href="https://orteil.dashnet.org/cookieclicker/" target ="_blank">Example of Inspired by Cookie Click Game</a>
-     <a href="https://orteil.dashnet.org/cookieclicker/" target ="_blank">Inspired by Cookie Click Game</a>
-     <a href="#developer-modal">Developer</a>
-
-     <a ref="#" id="companyLink">About Us</a>   
-     <div id="dropdown">
-        <p>Heyy! Welcome to Fred Da Baker's Baking Company. We have the best donuts in town and I guarantee that you won't find any donuts better! </p>
-     <div id="devopler-modal" class="modal">
-<span class="modal-content">
-<h3>About the Developer</h3>
-<p>I am an IT Program Manger turned Developer and I enjoy creating projects such as this in my free time!</p>
-<a href="https://github.com/BernadaPope" target="_blank">Portfolio</a>
+      <a href="#" About></a>
+      <a href="https://orteil.dashnet.org/cookieclicker/"
+        >Inspiration behind this game</a
+      >
+      <a href="#">Contact</a>
+      <div class="modal" id="developer-info">
+        <div class="modal-content">
+          <h2>About The Developer</h2>
+          <p>
+            I am a programmer who enjoys doing projects in my spare time which
+            inspired me to create this game!
+          </p>
+          <p>
+            <a href="https://github.com/BernadaPope">Github</a> |
+            <a href="https://www.portfolio.com/">Portfolio</a>
+          </p>
+        </div>
       </div>
-      <button id="auto-clicker-button" disabled>Buy Auto Clicker</button>
-      <div id="donut-count">Donut Count:0</div>
-      <button id="clicker-button">Click me to Make donuts</button>
-      <div id="auto-clicker-section">Purchase Auto Clicker</div>
-      <h3>Auto Clickers</h3>
-      <div>
-        <button id="buy-auto-clicker">Buy Auto Clicker</button>
-        <span id="auto-clicker-count">Auto Clicker Count: 0</span>
-      <button id="reset-button">Reset Game</button>
-      </div>
-      </div>
-    </button>
-  </header>
-
+    </header>
+    <main>
+      <section id="clicker">
+        <button id="click">Click me to make donuts!</button>
+        <p id="donuts">Donuts: 0</p>
+      </section>
+      <section id="autoclickers">
+        <p>Auto Clickers: 0</p>
+        <button id="buy-autoclicker">Buy Auto Clicker</button>
+      </section>
+      <button id="reset">Reset</button>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
